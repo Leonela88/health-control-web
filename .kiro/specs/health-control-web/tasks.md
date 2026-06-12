@@ -142,27 +142,27 @@ Implementación completa de la aplicación web Health-Control con Next.js 14+ Ap
     - _Requirements: 1.5, 1.6_
 
 - [ ] 8. Página de servicios (`/servicios`)
-  - [ ] 8.1 Implementar `components/servicios/ServiceCard.tsx`
+  - [x] 8.1 Implementar `components/servicios/ServiceCard.tsx`
     - Props: `service: ServiceItem`
     - Renderizar `Card` de shadcn con nombre, descripción corta, ícono `lucide-react` y badge "Próximamente" condicional cuando `available === false`
     - _Requirements: 2.2_
 
-  - [ ] 8.2 Escribir property test — Propiedad 2: ServiceCard contiene campos obligatorios
+  - [-] 8.2 Escribir property test — Propiedad 2: ServiceCard contiene campos obligatorios
     - **Property 2: Tarjeta de servicio contiene campos obligatorios**
     - Usar `fast-check` para generar `ServiceItem` con `name`, `shortDescription` e `icon` no vacíos; renderizar `ServiceCard` y afirmar que los tres campos aparecen en el DOM
     - **Validates: Requirements 2.2**
 
-  - [ ] 8.3 Implementar `components/servicios/AccessoryCard.tsx`
+  - [x] 8.3 Implementar `components/servicios/AccessoryCard.tsx`
     - Props: `accessory: Accessory`
     - Renderizar `Card` de shadcn con imagen placeholder (`next/image` con `alt`, `width`, `height`), nombre, descripción y etiqueta de precio
     - _Requirements: 2.4, 2.5_
 
-  - [ ] 8.4 Escribir property test — Propiedad 3: AccessoryCard contiene campos obligatorios
+  - [-] 8.4 Escribir property test — Propiedad 3: AccessoryCard contiene campos obligatorios
     - **Property 3: Tarjeta de accesorio contiene campos obligatorios**
     - Usar `fast-check` para generar `Accessory` con `name`, `description` y `priceLabel` no vacíos; renderizar `AccessoryCard` y afirmar que los tres campos aparecen en el DOM
     - **Validates: Requirements 2.4, 2.5**
 
-  - [ ] 8.5 Implementar `components/servicios/ExerciseSection.tsx`
+  - [x] 8.5 Implementar `components/servicios/ExerciseSection.tsx`
     - Props: `exercises: Exercise[]`
     - Renderizar acordeón (usando componentes shadcn `Accordion` o `details`/`summary` nativo) con título, lista ordenada de pasos y duración
     - _Requirements: 2.3_
