@@ -113,29 +113,29 @@ Implementación completa de la aplicación web Health-Control con Next.js 14+ Ap
   - Ejecutar `npx tsc --noEmit` para verificar que Navbar, Footer y layout compilan sin errores.
   - Ejecutar `npx vitest run` para confirmar que todos los tests pasan hasta este punto.
 
-- [ ] 7. Página de inicio (`/`)
-  - [ ] 7.1 Implementar `components/home/HeroSection.tsx`
+- [x] 7. Página de inicio (`/`)
+  - [x] 7.1 Implementar `components/home/HeroSection.tsx`
     - Server Component (sin `'use client'`)
     - Renderizar: `<h1>` con nombre de marca, tagline descriptivo, descripción de osteo-presura (≤ 3 oraciones), `<Link href="/contacto">` como CTA
     - Opcionalmente incluir `<Image>` de `next/image` con `alt`, `width` y `height`
     - _Requirements: 1.1, 1.2, 7.2_
 
-  - [ ] 7.2 Implementar `components/home/ValueProposition.tsx`
+  - [x] 7.2 Implementar `components/home/ValueProposition.tsx`
     - Props: `benefits: Benefit[]` donde `Benefit = { icon: string; title: string; description: string }`
     - Renderizar grid de mínimo tres tarjetas, cada una con ícono `lucide-react`, título y descripción
     - _Requirements: 1.3_
 
-  - [ ]* 7.3 Escribir property test — Propiedad 1: Landing muestra al menos tres beneficios
+  - [x] 7.3 Escribir property test — Propiedad 1: Landing muestra al menos tres beneficios
     - **Property 1: Landing muestra al menos tres beneficios**
     - Usar `fast-check` para generar arrays de `Benefit` con longitud ≥ 3; renderizar `ValueProposition` con `@testing-library/react` y afirmar que el número de tarjetas renderizadas es ≥ 3
     - **Validates: Requirements 1.3**
 
-  - [ ] 7.4 Implementar `components/home/PainPoints.tsx`
+  - [x] 7.4 Implementar `components/home/PainPoints.tsx`
     - Props: `painPoints: PainPoint[]` donde `PainPoint = { label: string; description: string }`
     - Renderizar grid de mínimo cuatro tarjetas con ícono, etiqueta y descripción
     - _Requirements: 1.4_
 
-  - [ ] 7.5 Crear `app/page.tsx` con metadata SEO y composición de secciones
+  - [x] 7.5 Crear `app/page.tsx` con metadata SEO y composición de secciones
     - Exportar `metadata: Metadata` con title, description y openGraph para la ruta `/`
     - Importar y componer `HeroSection`, `ValueProposition` (con datos de beneficios hardcoded) y `PainPoints` (con datos de condiciones hardcoded)
     - Todos los componentes deben ser RSC (sin JS al cliente)
@@ -147,7 +147,7 @@ Implementación completa de la aplicación web Health-Control con Next.js 14+ Ap
     - Renderizar `Card` de shadcn con nombre, descripción corta, ícono `lucide-react` y badge "Próximamente" condicional cuando `available === false`
     - _Requirements: 2.2_
 
-  - [ ]* 8.2 Escribir property test — Propiedad 2: ServiceCard contiene campos obligatorios
+  - [ ] 8.2 Escribir property test — Propiedad 2: ServiceCard contiene campos obligatorios
     - **Property 2: Tarjeta de servicio contiene campos obligatorios**
     - Usar `fast-check` para generar `ServiceItem` con `name`, `shortDescription` e `icon` no vacíos; renderizar `ServiceCard` y afirmar que los tres campos aparecen en el DOM
     - **Validates: Requirements 2.2**
@@ -157,7 +157,7 @@ Implementación completa de la aplicación web Health-Control con Next.js 14+ Ap
     - Renderizar `Card` de shadcn con imagen placeholder (`next/image` con `alt`, `width`, `height`), nombre, descripción y etiqueta de precio
     - _Requirements: 2.4, 2.5_
 
-  - [ ]* 8.4 Escribir property test — Propiedad 3: AccessoryCard contiene campos obligatorios
+  - [ ] 8.4 Escribir property test — Propiedad 3: AccessoryCard contiene campos obligatorios
     - **Property 3: Tarjeta de accesorio contiene campos obligatorios**
     - Usar `fast-check` para generar `Accessory` con `name`, `description` y `priceLabel` no vacíos; renderizar `AccessoryCard` y afirmar que los tres campos aparecen en el DOM
     - **Validates: Requirements 2.4, 2.5**
@@ -195,7 +195,7 @@ Implementación completa de la aplicación web Health-Control con Next.js 14+ Ap
     - Renderizar nombre del autor, texto de reseña y `rating` estrellas SVG rellenas de un total de cinco
     - _Requirements: 4.2, 4.3_
 
-  - [ ]* 10.2 Escribir property test — Propiedad 7: ReviewCard renderiza todos los campos requeridos
+  - [ ] 10.2 Escribir property test — Propiedad 7: ReviewCard renderiza todos los campos requeridos
     - **Property 7: Reseña renderiza todos los campos requeridos**
     - Usar `fast-check` para generar `Review` con `authorName` no vacío, `text` no vacío y `rating` en `[1, 5]`; renderizar `ReviewCard` y afirmar que el autor, el texto y exactamente `rating` estrellas rellenas aparecen en el DOM
     - **Validates: Requirements 4.1, 4.2**
