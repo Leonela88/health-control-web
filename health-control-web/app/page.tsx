@@ -1,101 +1,99 @@
-import Image from "next/image";
+import type { Metadata } from 'next'
+import HeroSection from '@/components/home/HeroSection'
+import ValueProposition from '@/components/home/ValueProposition'
+import PainPoints from '@/components/home/PainPoints'
+import type { Benefit, PainPoint } from '@/lib/types'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Inicio',
+  description:
+    'Health-Control — especialistas en osteo-presura. Alivia dolores físicos, mejora tu postura y recupera tu bienestar con terapia manual personalizada.',
+  openGraph: {
+    title: 'Health-Control | Especialistas en Osteo-Presura',
+    description:
+      'Descubre cómo la osteo-presura puede aliviar tus dolores físicos y mejorar tu calidad de vida con sesiones personalizadas.',
+    url: 'https://health-control.es',
+  },
+}
+
+const benefits: Benefit[] = [
+  {
+    icon: 'Heart',
+    title: 'Tratamiento personalizado',
+    description:
+      'Cada sesión se adapta a tus necesidades específicas para obtener los mejores resultados posibles.',
+  },
+  {
+    icon: 'Shield',
+    title: 'Sin efectos secundarios',
+    description:
+      'La osteo-presura es una terapia manual no invasiva y completamente segura para todas las edades.',
+  },
+  {
+    icon: 'Activity',
+    title: 'Resultados duraderos',
+    description:
+      'Abordamos la causa raíz del dolor, no solo los síntomas, para una recuperación real y duradera.',
+  },
+  {
+    icon: 'CheckCircle',
+    title: 'Profesionales certificados',
+    description:
+      'Nuestro equipo cuenta con formación especializada y años de experiencia clínica.',
+  },
+  {
+    icon: 'Zap',
+    title: 'Recuperación rápida',
+    description:
+      'Nota la diferencia desde las primeras sesiones con técnicas de eficacia comprobada.',
+  },
+  {
+    icon: 'Smile',
+    title: 'Bienestar integral',
+    description:
+      'Mejoramos tu calidad de vida cuidando tanto el cuerpo como el equilibrio general del sistema músculo-esquelético.',
+  },
+]
+
+const painPoints: PainPoint[] = [
+  {
+    label: 'Dolor de espalda',
+    description:
+      'Lumbalgia, dorsalgia y contracturas cervicales provocadas por malas posturas o esfuerzo físico.',
+  },
+  {
+    label: 'Dolor articular',
+    description:
+      'Molestias en rodillas, caderas, hombros y otras articulaciones por desgaste o inflamación.',
+  },
+  {
+    label: 'Cefaleas tensionales',
+    description:
+      'Dolores de cabeza recurrentes originados por tensión muscular en el cuello y la zona cervical.',
+  },
+  {
+    label: 'Lesiones deportivas',
+    description:
+      'Esguinces, tendinitis y sobrecargas musculares derivadas de la práctica deportiva o el ejercicio intenso.',
+  },
+  {
+    label: 'Estrés y tensión',
+    description:
+      'Acumulación de tensión muscular y emocional que se manifiesta en rigidez, dolor o fatiga crónica.',
+  },
+  {
+    label: 'Problemas posturales',
+    description:
+      'Desequilibrios posturales como escoliosis funcional, hiperlordosis o cifosis que generan molestias cotidianas.',
+  },
+]
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    <>
+      <HeroSection />
+      <ValueProposition benefits={benefits} />
+      <PainPoints painPoints={painPoints} />
+    </>
+  )
 }
