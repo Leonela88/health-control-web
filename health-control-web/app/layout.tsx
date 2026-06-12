@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,7 +11,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Health-Control",
+  metadataBase: new URL("https://health-control.es"),
+  title: {
+    default: "Health-Control",
+    template: "%s | Health-Control",
+  },
   description: "Especialistas en osteo-presura para aliviar dolores físicos.",
 };
 
@@ -18,9 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
