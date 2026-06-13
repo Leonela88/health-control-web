@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Health-Control Web
 
-## Getting Started
+## Table of Contents
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
 
-First, run the development server:
+### General Info
+***
+Health-Control Web es una SPA desarrollada con Next.js 14 App Router para un emprendimiento de osteo presura. La aplicación permite a los clientes conocer los servicios disponibles, consultar ejercicios terapéuticos, leer reseñas de pacientes y enviar mensajes de contacto directamente desde la web.
+Proyecto desarrollado con Kiro (agente de IA de AWS), siguiendo GitFlow y Conventional Commits.
+
+**Estado del proyecto: En desarrollo 🚧**
+
+El contenido placeholder y el diseño están siendo reemplazados por contenido definitivo del negocio. Próximamente se integrará Google Places API para mostrar reseñas reales de Google.
+
+## Technologies
+***
+* [Kiro](https://kiro.dev/) (AWS) — Agente de IA para desarrollo asistido
+* [Next.js](https://nextjs.org/): Version 14.2
+* [React](https://react.dev/): Version 18
+* [TypeScript](https://www.typescriptlang.org/): Version 5
+* [Tailwind CSS](https://tailwindcss.com/): Version 3.4
+* [shadcn/ui](https://ui.shadcn.com/): Version latest
+* [Prisma ORM](https://www.prisma.io/): Version 5.14
+* [Zod](https://zod.dev/): Version 3.23
+* [Lucide React](https://lucide.dev/): Version 0.383
+* [next-themes](https://github.com/pacocoursey/next-themes): Version 0.3
+* [Vitest](https://vitest.dev/): Version 4.1
+* [fast-check](https://fast-check.io/): Version latest
+
+## Installation
+***
+Clona el repositorio e instala las dependencias:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ git clone https://github.com/Leonela88/health-control-web.git
+$ cd health-control-web
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Configura las variables de entorno:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+$ cp .env.example .env
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Añade en `.env`:
 
-## Learn More
+```
+DATABASE_URL="file:./dev.db"
+```
 
-To learn more about Next.js, take a look at the following resources:
+Inicializa la base de datos y arranca el servidor de desarrollo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+$ npx prisma migrate dev
+$ npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+La aplicación estará disponible en `http://localhost:3000`
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El flujo de trabajo sigue **GitFlow**:
+- `main` → rama de producción, solo recibe merges desde `develop`
+- `develop` → rama de integración
+- `feature/nombre-feature` → ramas de desarrollo por funcionalidad
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+**¿Cómo se ejecutan los tests?**
+El proyecto usa Vitest con property-based testing mediante fast-check:
+```bash
+$ npx vitest run
+```
