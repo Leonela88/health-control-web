@@ -6,11 +6,11 @@ import ReviewCard from '@/components/resenas/ReviewCard'
 export const metadata: Metadata = {
   title: 'Reseñas',
   description:
-    'Lee las opiniones de nuestros pacientes sobre los tratamientos de osteo-presura y fisioterapia.',
+    'Lee las opiniones de nuestros clientes sobre nuestros tratamientos',
   openGraph: {
     title: 'Reseñas | Health-Control',
     description:
-      'Lee las opiniones de nuestros pacientes sobre los tratamientos de osteo-presura y fisioterapia.',
+      'Lee las opiniones de nuestros clientes sobre nuestros tratamientos',
     url: 'https://health-control.es/resenas',
   },
 }

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "Health-Control",
     template: "%s | Health-Control",
   },
-  description: "Especialistas en osteo-presura para aliviar dolores físicos.",
+  description: "Especialistas en osteopresión para aliviar dolores físicos.",
 };
 
 export default function RootLayout({
