@@ -4,48 +4,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Colores Health-Control */
+    --background: 38 43% 94%;        /* #f7f3ec - fondo beige cálido */
+    --foreground: 211 51% 23%;       /* #1c3557 - azul oscuro para texto */
+    --card: 38 43% 94%;              /* #f7f3ec - igual que background */
+    --card-foreground: 211 51% 23%;  /* #1c3557 */
+    --popover: 38 43% 94%;
+    --popover-foreground: 211 51% 23%;
+    --primary: 211 51% 23%;          /* #1c3557 - azul principal */
+    --primary-foreground: 38 43% 94%; /* texto sobre primary */
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: 211 51% 23%;
+    --muted: 38 30% 88%;             /* beige más tenue */
+    --muted-foreground: 211 35% 40%; /* azul más claro */
+    --accent: 45 95% 46%;            /* #dfa408 - dorado/amarillo */
+    --accent-foreground: 211 51% 23%; /* texto sobre accent */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 95% 46%;            /* #dfa408 - bordes dorados */
+    --input: 38 30% 88%;
+    --ring: 45 95% 46%;              /* #dfa408 - focus ring dorado */
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --background: 211 51% 15%;       /* azul muy oscuro */
+    --foreground: 38 43% 94%;        /* beige claro para texto */
+    --card: 211 51% 18%;
+    --card-foreground: 38 43% 94%;
+    --popover: 211 51% 15%;
+    --popover-foreground: 38 43% 94%;
+    --primary: 38 43% 94%;
+    --primary-foreground: 211 51% 23%;
+    --secondary: 211 40% 25%;
+    --secondary-foreground: 38 43% 94%;
+    --muted: 211 40% 25%;
+    --muted-foreground: 38 30% 70%;
+    --accent: 45 95% 46%;            /* #dfa408 mantiene en dark */
+    --accent-foreground: 211 51% 15%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive-foreground: 38 43% 94%;
+    --border: 45 95% 46%;            /* #dfa408 */
+    --input: 211 40% 25%;
+    --ring: 45 95% 46%;
   }
 }
 
@@ -55,6 +56,17 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better focus outlines */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-[#dfa408] ring-offset-2;
   }
 }
 
@@ -62,4 +74,50 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Custom gradient backgrounds */
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, #f7f3ec 0%, #faf7f0 50%, #f0ebe0 100%);
+  }
+  
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #1c3557 0%, #2a4a70 100%);
+  }
+  
+  /* Custom animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(223, 164, 8, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
 }
+

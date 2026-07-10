@@ -7,11 +7,11 @@ import type { Benefit, PainPoint } from '@/lib/types'
 export const metadata: Metadata = {
   title: 'Inicio',
   description:
-    'Health-Control — especialistas en osteo-presura. Alivia dolores físicos, mejora tu postura y recupera tu bienestar con terapia manual personalizada.',
+    'Health-Control — especialistas en osteopresión. Alivia dolores físicos, mejora tu postura y recupera tu bienestar con tratamiento manual personalizado.',
   openGraph: {
-    title: 'Health-Control | Especialistas en Osteo-Presura',
+    title: 'Health-Control | Especialistas en Osteopresión',
     description:
-      'Descubre cómo la osteo-presura puede aliviar tus dolores físicos y mejorar tu calidad de vida con sesiones personalizadas.',
+      'Descubre cómo la osteopresión puede aliviar tus dolores físicos y mejorar tu calidad de vida con sesiones personalizadas.',
     url: 'https://health-control.es',
   },
 }
@@ -27,25 +27,13 @@ const benefits: Benefit[] = [
     icon: 'Shield',
     title: 'Sin efectos secundarios',
     description:
-      'La osteo-presura es una terapia manual no invasiva y completamente segura para todas las edades.',
+      'La osteopresión es un tratamiento manual no invasivo y completamente seguro para todas las edades.',
   },
   {
     icon: 'Activity',
     title: 'Resultados duraderos',
     description:
       'Abordamos la causa raíz del dolor, no solo los síntomas, para una recuperación real y duradera.',
-  },
-  {
-    icon: 'CheckCircle',
-    title: 'Profesionales certificados',
-    description:
-      'Nuestro equipo cuenta con formación especializada y años de experiencia clínica.',
-  },
-  {
-    icon: 'Zap',
-    title: 'Recuperación rápida',
-    description:
-      'Nota la diferencia desde las primeras sesiones con técnicas de eficacia comprobada.',
   },
   {
     icon: 'Smile',
@@ -70,11 +58,6 @@ const painPoints: PainPoint[] = [
     label: 'Cefaleas tensionales',
     description:
       'Dolores de cabeza recurrentes originados por tensión muscular en el cuello y la zona cervical.',
-  },
-  {
-    label: 'Lesiones deportivas',
-    description:
-      'Esguinces, tendinitis y sobrecargas musculares derivadas de la práctica deportiva o el ejercicio intenso.',
   },
   {
     label: 'Estrés y tensión',
