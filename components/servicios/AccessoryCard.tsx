@@ -27,11 +27,6 @@ export default function AccessoryCard({ accessory }: AccessoryCardProps) {
         <CardTitle>{accessory.name}</CardTitle>
         <CardDescription>{accessory.description}</CardDescription>
       </CardHeader>
-      <CardFooter>
-        <span className="text-sm font-medium text-primary">
-          {accessory.priceLabel}
-        </span>
-      </CardFooter>
     </Card>
   )
 }

@@ -37,3 +37,6 @@ next-env.d.ts
 
 .kiro/
 .vscode/
+
+prisma/dev.db
+prisma/*.db

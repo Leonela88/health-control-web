@@ -30,35 +30,46 @@ interface ValuePropositionProps {
 
 export default function ValueProposition({ benefits }: ValuePropositionProps) {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#1c3557]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-4">
-          ¿Por qué elegir Health-Control?
-        </h2>
-        <p className="text-center text-gray-500 dark:text-gray-400 mb-12 max-w-xl mx-auto">
-          Nuestra metodología combina eficacia, personalización y cuidado integral.
-        </p>
+        {/* Header with decorative accent */}
+        <div className="text-center mb-16 relative">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-[#d4a745] to-transparent"></div>
+          <h2 className="text-4xl font-bold text-[#1c3557] dark:text-[#f7f3ec] mb-4 mt-6">
+            ¿Por qué elegir Health-Control?
+          </h2>
+          <p className="text-lg text-[#1c3557]/70 dark:text-[#f7f3ec]/80 max-w-2xl mx-auto">
+            Nuestra metodología combina eficacia, personalización y cuidado integral.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => {
             const IconComponent = iconMap[benefit.icon] ?? Heart
             return (
               <Card
                 key={index}
                 data-testid="benefit-card"
-                className="border border-gray-200 dark:border-gray-800 hover:shadow-md transition-shadow"
+                className="group relative border-2 border-[#d4a745]/20 bg-[#f7f3ec] dark:bg-[#2a4a70] hover:border-[#d4a745] hover:shadow-xl hover:shadow-[#d4a745]/10 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
-                <CardHeader className="flex flex-row items-center gap-3 pb-2">
-                  <IconComponent
-                    className="w-8 h-8 text-indigo-600 dark:text-indigo-400 shrink-0"
-                    aria-hidden="true"
-                  />
-                  <CardTitle className="text-lg font-semibold text-gray-900 dark:text-white">
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#d4a745]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                <CardHeader className="flex flex-row items-start gap-4 pb-3 relative z-10">
+                  <div className="p-3 rounded-xl bg-[#d4a745]/20 group-hover:bg-[#d4a745]/30 transition-colors">
+                    <IconComponent
+                      className="w-7 h-7 text-[#d4a745] group-hover:scale-110 transition-transform"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <CardTitle className="text-xl font-bold text-[#1c3557] dark:text-[#f7f3ec] mt-2">
                     {benefit.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
+                <CardContent className="relative z-10">
+                  <p className="text-base text-[#1c3557]/80 dark:text-[#f7f3ec]/90 leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </CardContent>
               </Card>
             )
