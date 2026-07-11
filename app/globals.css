@@ -17,13 +17,13 @@
     --secondary-foreground: 211 51% 23%;
     --muted: 38 30% 88%;             /* beige más tenue */
     --muted-foreground: 211 35% 40%; /* azul más claro */
-    --accent: 45 95% 46%;            /* #dfa408 - dorado/amarillo */
+    --accent: 42 78% 55%;            /* #d4a745 - dorado suave */
     --accent-foreground: 211 51% 23%; /* texto sobre accent */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 45 95% 46%;            /* #dfa408 - bordes dorados */
+    --border: 42 78% 55%;            /* #d4a745 - bordes dorados suaves */
     --input: 38 30% 88%;
-    --ring: 45 95% 46%;              /* #dfa408 - focus ring dorado */
+    --ring: 42 78% 55%;              /* #d4a745 - focus ring dorado suave */
     --radius: 0.5rem;
   }
 
@@ -40,13 +40,13 @@
     --secondary-foreground: 38 43% 94%;
     --muted: 211 40% 25%;
     --muted-foreground: 38 30% 70%;
-    --accent: 45 95% 46%;            /* #dfa408 mantiene en dark */
+    --accent: 42 78% 55%;            /* #d4a745 dorado suave mantiene en dark */
     --accent-foreground: 211 51% 15%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 38 43% 94%;
-    --border: 45 95% 46%;            /* #dfa408 */
+    --border: 42 78% 55%;            /* #d4a745 */
     --input: 211 40% 25%;
-    --ring: 45 95% 46%;
+    --ring: 42 78% 55%;
   }
 }
 
@@ -66,7 +66,7 @@
   
   /* Better focus outlines */
   *:focus-visible {
-    @apply outline-none ring-2 ring-[#dfa408] ring-offset-2;
+    @apply outline-none ring-2 ring-[#d4a745] ring-offset-2;
   }
 }
 
@@ -114,7 +114,7 @@
     background: linear-gradient(
       to right,
       transparent 0%,
-      rgba(223, 164, 8, 0.1) 50%,
+      rgba(212, 167, 69, 0.1) 50%,
       transparent 100%
     );
     background-size: 1000px 100%;

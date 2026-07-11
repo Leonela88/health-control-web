@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/home/HeroSection'
 import ValueProposition from '@/components/home/ValueProposition'
-import PainPoints from '@/components/home/PainPoints'
-import type { Benefit, PainPoint } from '@/lib/types'
+import type { Benefit } from '@/lib/types'
 
 export const metadata: Metadata = {
   title: 'Inicio',
@@ -19,55 +18,27 @@ export const metadata: Metadata = {
 const benefits: Benefit[] = [
   {
     icon: 'Heart',
-    title: 'Tratamiento personalizado',
+    title: 'Tratamiento personalizado a domicilio',
     description:
       'Cada sesión se adapta a tus necesidades específicas para obtener los mejores resultados posibles.',
   },
   {
     icon: 'Shield',
-    title: 'Sin efectos secundarios',
+    title: 'Seguro y sin medicamentos',
     description:
-      'La osteopresión es un tratamiento manual no invasivo y completamente seguro para todas las edades.',
+      'Tratamiento manual no invasivo y respetuoso con tu cuerpo.',
   },
   {
     icon: 'Activity',
     title: 'Resultados duraderos',
     description:
-      'Abordamos la causa raíz del dolor, no solo los síntomas, para una recuperación real y duradera.',
+      'Buscamos aliviar la causa del dolor, no solo los síntomas para un bienestar duradero',
   },
   {
     icon: 'Smile',
     title: 'Bienestar integral',
     description:
-      'Mejoramos tu calidad de vida cuidando tanto el cuerpo como el equilibrio general del sistema músculo-esquelético.',
-  },
-]
-
-const painPoints: PainPoint[] = [
-  {
-    label: 'Dolor de espalda',
-    description:
-      'Lumbalgia, dorsalgia y contracturas cervicales provocadas por malas posturas o esfuerzo físico.',
-  },
-  {
-    label: 'Dolor articular',
-    description:
-      'Molestias en rodillas, caderas, hombros y otras articulaciones por desgaste o inflamación.',
-  },
-  {
-    label: 'Cefaleas tensionales',
-    description:
-      'Dolores de cabeza recurrentes originados por tensión muscular en el cuello y la zona cervical.',
-  },
-  {
-    label: 'Estrés y tensión',
-    description:
-      'Acumulación de tensión muscular y emocional que se manifiesta en rigidez, dolor o fatiga crónica.',
-  },
-  {
-    label: 'Problemas posturales',
-    description:
-      'Desequilibrios posturales como escoliosis funcional, hiperlordosis o cifosis que generan molestias cotidianas.',
+      'Factores de la nutricion y ambientales para menos dolor, más movilidad y mejor calidad de vida.',
   },
 ]
 
@@ -76,7 +47,6 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ValueProposition benefits={benefits} />
-      <PainPoints painPoints={painPoints} />
     </>
   )
 }

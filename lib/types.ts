@@ -49,7 +49,6 @@ export interface Accessory {
   id: string
   name: string
   description: string
-  priceLabel: string  // e.g. "Consultar precio"
   imagePlaceholder: string
 }
 
