@@ -14,12 +14,12 @@ import {
 } from '@/components/ui/select'
 
 const TIPOS_DOLOR = [
-    'Dolor lumbar',
-    'Dolor cervical',
-    'Dolor de hombro',
-    'Dolor de rodilla',
-    'Retención de líquidos',
-    'Estrés y tensión muscular',
+    'Dolor de espalda',
+    'Rodillas y caderas',
+    'Piernas, pies y tobillos',
+    'Ciática',
+    'Hombros y codos',
+    'Dolor de cuello, cabeza y migraña',
     'Otro',
 ]
 

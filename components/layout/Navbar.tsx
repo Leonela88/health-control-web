@@ -20,7 +20,7 @@ export function DarkModeToggle() {
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label={theme === "dark" ? "Activar modo claro" : "Activar modo oscuro"}
-      className="rounded-xl p-2.5 transition-all hover:bg-[#dfa408]/20 hover:text-[#dfa408] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#dfa408]"
+      className="rounded-xl p-2.5 transition-all hover:bg-[#d4a745]/20 hover:text-[#d4a745] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a745]"
     >
       {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </button>
@@ -32,14 +32,14 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b-2 border-[#dfa408]/20 bg-[#f7f3ec]/95 dark:bg-[#1c3557]/95 backdrop-blur supports-[backdrop-filter]:bg-[#f7f3ec]/80 dark:supports-[backdrop-filter]:bg-[#1c3557]/80 shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b-2 border-[#d4a745]/20 bg-[#f7f3ec]/95 dark:bg-[#1c3557]/95 backdrop-blur supports-[backdrop-filter]:bg-[#f7f3ec]/80 dark:supports-[backdrop-filter]:bg-[#1c3557]/80 shadow-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Brand */}
         <Link
           href="/"
-          className="text-xl font-bold text-[#1c3557] dark:text-[#f7f3ec] transition-all hover:text-[#dfa408] dark:hover:text-[#dfa408] flex items-center gap-2"
+          className="text-xl font-bold text-[#1c3557] dark:text-[#f7f3ec] transition-all hover:text-[#d4a745] dark:hover:text-[#d4a745] flex items-center gap-2"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#dfa408] to-[#c99207] flex items-center justify-center text-[#1c3557] font-bold">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#d4a745] to-[#c19639] flex items-center justify-center text-[#1c3557] font-bold">
             HC
           </div>
           <span className="hidden sm:inline">Health-Control</span>
@@ -55,8 +55,8 @@ export default function Navbar() {
                   href={href}
                   className={`rounded-xl px-4 py-2 text-sm font-semibold transition-all ${
                     isActive
-                      ? "bg-[#dfa408] text-[#1c3557] shadow-md"
-                      : "text-[#1c3557] dark:text-[#f7f3ec] hover:bg-[#dfa408]/20 hover:text-[#dfa408]"
+                      ? "bg-[#d4a745] text-[#1c3557] shadow-md"
+                      : "text-[#1c3557] dark:text-[#f7f3ec] hover:bg-[#d4a745]/20 hover:text-[#d4a745]"
                   }`}
                 >
                   {label}
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden rounded-xl p-2 text-[#1c3557] dark:text-[#f7f3ec] hover:bg-[#dfa408]/20"
+          className="md:hidden rounded-xl p-2 text-[#1c3557] dark:text-[#f7f3ec] hover:bg-[#d4a745]/20"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -83,7 +83,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#dfa408]/20 bg-[#f7f3ec] dark:bg-[#1c3557] px-4 py-4">
+        <div className="md:hidden border-t border-[#d4a745]/20 bg-[#f7f3ec] dark:bg-[#1c3557] px-4 py-4">
           <ul className="space-y-2">
             {ROUTES.map(({ href, label }) => {
               const isActive = pathname === href;
@@ -94,8 +94,8 @@ export default function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block rounded-xl px-4 py-3 text-base font-semibold transition-all ${
                       isActive
-                        ? "bg-[#dfa408] text-[#1c3557]"
-                        : "text-[#1c3557] dark:text-[#f7f3ec] hover:bg-[#dfa408]/20"
+                        ? "bg-[#d4a745] text-[#1c3557]"
+                        : "text-[#1c3557] dark:text-[#f7f3ec] hover:bg-[#d4a745]/20"
                     }`}
                   >
                     {label}
@@ -104,7 +104,7 @@ export default function Navbar() {
               );
             })}
           </ul>
-          <div className="mt-4 pt-4 border-t border-[#dfa408]/20 flex justify-center">
+          <div className="mt-4 pt-4 border-t border-[#d4a745]/20 flex justify-center">
             <DarkModeToggle />
           </div>
         </div>

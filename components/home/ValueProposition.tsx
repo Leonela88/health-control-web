@@ -34,7 +34,7 @@ export default function ValueProposition({ benefits }: ValuePropositionProps) {
       <div className="max-w-6xl mx-auto">
         {/* Header with decorative accent */}
         <div className="text-center mb-16 relative">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-[#dfa408] to-transparent"></div>
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-transparent via-[#d4a745] to-transparent"></div>
           <h2 className="text-4xl font-bold text-[#1c3557] dark:text-[#f7f3ec] mb-4 mt-6">
             ¿Por qué elegir Health-Control?
           </h2>
@@ -50,15 +50,15 @@ export default function ValueProposition({ benefits }: ValuePropositionProps) {
               <Card
                 key={index}
                 data-testid="benefit-card"
-                className="group relative border-2 border-[#dfa408]/20 bg-[#f7f3ec] dark:bg-[#2a4a70] hover:border-[#dfa408] hover:shadow-xl hover:shadow-[#dfa408]/10 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                className="group relative border-2 border-[#d4a745]/20 bg-[#f7f3ec] dark:bg-[#2a4a70] hover:border-[#d4a745] hover:shadow-xl hover:shadow-[#d4a745]/10 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
                 {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#dfa408]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#d4a745]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <CardHeader className="flex flex-row items-start gap-4 pb-3 relative z-10">
-                  <div className="p-3 rounded-xl bg-[#dfa408]/20 group-hover:bg-[#dfa408]/30 transition-colors">
+                  <div className="p-3 rounded-xl bg-[#d4a745]/20 group-hover:bg-[#d4a745]/30 transition-colors">
                     <IconComponent
-                      className="w-7 h-7 text-[#dfa408] group-hover:scale-110 transition-transform"
+                      className="w-7 h-7 text-[#d4a745] group-hover:scale-110 transition-transform"
                       aria-hidden="true"
                     />
                   </div>
