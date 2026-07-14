@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Colores Health-Control */
+    --background: 38 43% 94%;        /* #f7f3ec - fondo beige cálido */
+    --foreground: 211 51% 23%;       /* #1c3557 - azul oscuro para texto */
+    --card: 38 43% 94%;              /* #f7f3ec - igual que background */
+    --card-foreground: 211 51% 23%;  /* #1c3557 */
+    --popover: 38 43% 94%;
+    --popover-foreground: 211 51% 23%;
+    --primary: 211 51% 23%;          /* #1c3557 - azul principal */
+    --primary-foreground: 38 43% 94%; /* texto sobre primary */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 211 51% 23%;
+    --muted: 38 30% 88%;             /* beige más tenue */
+    --muted-foreground: 211 35% 40%; /* azul más claro */
+    --accent: 42 78% 55%;            /* #d4a745 - dorado suave */
+    --accent-foreground: 211 51% 23%; /* texto sobre accent */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 42 78% 55%;            /* #d4a745 - bordes dorados suaves */
+    --input: 38 30% 88%;
+    --ring: 42 78% 55%;              /* #d4a745 - focus ring dorado suave */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 211 51% 15%;       /* azul muy oscuro */
+    --foreground: 38 43% 94%;        /* beige claro para texto */
+    --card: 211 51% 18%;
+    --card-foreground: 38 43% 94%;
+    --popover: 211 51% 15%;
+    --popover-foreground: 38 43% 94%;
+    --primary: 38 43% 94%;
+    --primary-foreground: 211 51% 23%;
+    --secondary: 211 40% 25%;
+    --secondary-foreground: 38 43% 94%;
+    --muted: 211 40% 25%;
+    --muted-foreground: 38 30% 70%;
+    --accent: 42 78% 55%;            /* #d4a745 dorado suave mantiene en dark */
+    --accent-foreground: 211 51% 15%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 38 43% 94%;
+    --border: 42 78% 55%;            /* #d4a745 */
+    --input: 211 40% 25%;
+    --ring: 42 78% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better focus outlines */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-[#d4a745] ring-offset-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Custom gradient backgrounds */
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, #f7f3ec 0%, #faf7f0 50%, #f0ebe0 100%);
+  }
+  
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #1c3557 0%, #2a4a70 100%);
+  }
+  
+  /* Custom animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(212, 167, 69, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+}
+
