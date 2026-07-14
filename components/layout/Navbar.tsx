@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ROUTES = [
   { href: "/", label: "Inicio" },
@@ -15,6 +15,13 @@ const ROUTES = [
 
 export function DarkModeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect (() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <div className="w-10 h-10" />;
 
   return (
     <button

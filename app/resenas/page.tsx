@@ -1,33 +1,22 @@
 import type { Metadata } from 'next'
 import { reviews } from '@/lib/data/reviews'
-import { adaptGoogleReview } from '@/lib/types'
+import { getGoogleReviews } from '@/lib/data/google-reviews'
 import ReviewCard from '@/components/resenas/ReviewCard'
 
 export const metadata: Metadata = {
   title: 'Reseñas',
-  description:
-    'Lee las opiniones de nuestros clientes sobre nuestros tratamientos',
+  description: 'Lee las opiniones de nuestros pacientes.',
   openGraph: {
     title: 'Reseñas | Health-Control',
-    description:
-      'Lee las opiniones de nuestros clientes sobre nuestros tratamientos',
+    description: 'Lee las opiniones de nuestros pacientes.',
     url: 'https://health-control.es/resenas',
   },
 }
 
-export default function ResenasPage() {
-  // Ejemplo de uso del adaptador con dato placeholder
-  const googlePlaceholder = adaptGoogleReview(
-    {
-      author_name: 'Usuario Google',
-      rating: 5,
-      text: 'Excelente profesional, muy recomendable.',
-      relative_time_description: 'hace 1 semana',
-    },
-    reviews.length,
-  )
-
-  const allReviews = [...reviews, googlePlaceholder]
+export default async function ResenasPage() {
+  const googleReviews = await getGoogleReviews()
+  console.log('Google reviews:', googleReviews)
+  const allReviews = googleReviews.length > 0 ? googleReviews : reviews
 
   return (
     <main className="container mx-auto px-4 py-12">
