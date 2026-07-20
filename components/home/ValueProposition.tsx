@@ -55,7 +55,7 @@ export default function ValueProposition({ benefits }: ValuePropositionProps) {
                 {/* Decorative corner accent */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#d4a745]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
-                <CardHeader className="flex flex-row items-start gap-4 pb-3 relative z-10">
+                <CardHeader className="flex flex-row items-start gap-4 pb-3 pt-6 px-6 relative z-10">
                   <div className="p-3 rounded-xl bg-[#d4a745]/20 group-hover:bg-[#d4a745]/30 transition-colors">
                     <IconComponent
                       className="w-7 h-7 text-[#d4a745] group-hover:scale-110 transition-transform"
@@ -66,7 +66,7 @@ export default function ValueProposition({ benefits }: ValuePropositionProps) {
                     {benefit.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="relative z-10">
+                <CardContent className="relative z-10 px-6 pb-6">
                   <p className="text-base text-[#1c3557]/80 dark:text-[#f7f3ec]/90 leading-relaxed">
                     {benefit.description}
                   </p>

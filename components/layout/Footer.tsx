@@ -95,6 +95,14 @@ export default function Footer() {
                   Reseñas
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/aviso-legal"
+                  className="text-base text-[#1c3557] dark:text-[#f7f3ec] transition-colors hover:text-[#d4a745]"
+                >
+                  Aviso Legal
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

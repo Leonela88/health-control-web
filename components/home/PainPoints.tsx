@@ -31,7 +31,7 @@ export default function PainPoints({ painPoints }: PainPointsProps) {
               {/* Decorative accent line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#d4a745] via-[#d4a745]/50 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
               
-              <CardHeader className="pb-3">
+              <CardHeader className="pb-3 pt-6 px-6">
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-[#d4a745] mt-2 flex-shrink-0"></div>
                   <CardTitle className="text-xl font-bold text-[#1c3557] dark:text-[#f7f3ec] group-hover:text-[#d4a745] dark:group-hover:text-[#d4a745] transition-colors">
@@ -39,7 +39,7 @@ export default function PainPoints({ painPoints }: PainPointsProps) {
                   </CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="px-6 pb-6">
                 <p className="text-base text-[#1c3557]/80 dark:text-[#f7f3ec]/90 leading-relaxed">
                   {point.description}
                 </p>
