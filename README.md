@@ -6,6 +6,7 @@ Aplicación web para servicios de salud y bienestar especializados en osteopresi
 
 - [Descripción General](#descripción-general)
 - [Características](#características)
+- [Arquitectura](#arquitectura)
 - [Tecnologías](#tecnologías)
 - [Instalación](#instalación)
 - [Desarrollo](#desarrollo)
@@ -16,9 +17,7 @@ Aplicación web para servicios de salud y bienestar especializados en osteopresi
 
 Health-Control Web es una aplicación multi-página construida con Next.js 14+ (App Router) que presenta servicios de salud y bienestar especializados en osteopresión. La aplicación ofrece:
 
-- Información sobre tratamientos y servicios
-- Catálogo de ejercicios terapéuticos adaptados
-- Accesorios para uso en casa
+- Información sobre tratamientos de osteopresión
 - Formulario de contacto con persistencia en base de datos
 - Sistema de reseñas integrado con Google Places API
 - Diseño moderno con colores de marca (#f7f3ec beige, #1c3557 azul oscuro, #d4a745 dorado)
@@ -31,7 +30,7 @@ Health-Control Web es una aplicación multi-página construida con Next.js 14+ (
 
 - ⚡ **React Server Components** (RSC) como arquitectura principal
 - 🎨 **Diseño personalizado** con colores de marca y efectos visuales modernos
--🌙 **Dark mode** con next-themes y toggle en la navbar
+- 🌙 **Dark mode** con next-themes y toggle en la navbar
 - 📱 **Diseño responsive** con Tailwind CSS
 - 🗄️ **Persistencia de datos** con Prisma ORM + SQLite
 - ✅ **Validación de formularios** con Zod
@@ -40,8 +39,7 @@ Health-Control Web es una aplicación multi-página construida con Next.js 14+ (
 - 🔍 **SEO optimizado** con Metadata API de Next.js
 - 🌐 **Integración con Google Places API** para reseñas en tiempo real
 
-
-## 🛠️ Tecnologías
+## 🏗️ Arquitectura
 
 ### Core
 - **[Next.js 14.2](https://nextjs.org/)** - React framework con App Router
@@ -197,7 +195,17 @@ npm run test:coverage
 7. ✅ ReviewCard renderiza todos los campos requeridos
 8. ✅ Toggle de dark mode es idempotente y reversible
 
-## 🏗️ Arquitectura de la Aplicación
+### Colores de Marca
+
+```css
+/* Brand Colors */
+--beige-bg: #f7f3ec;      /* Fondo principal */
+--dark-blue: #1c3557;     /* Texto principal */
+--soft-gold: #d4a745;     /* Acentos y detalles */
+--gold-hover: #c19639;    /* Hover states */
+```
+
+## 🛠️ Tecnologías
 
 ### Diagrama de Flujo de Datos
 
@@ -219,7 +227,7 @@ graph TB
     subgraph "Components Layer"
         direction LR
         HomeComponents["HeroSection<br/>ValueProposition"]
-        ServiciosComponents["PainPoints<br/>AccessoryCard<br/>ExerciseSection"]
+        ServiciosComponents["PainPoints"]
         ContactComponents["ContactForm"]
         ResenasComponents["ReviewCard"]
         LayoutComponents["Navbar<br/>Footer"]
@@ -320,8 +328,6 @@ graph TD
     
     Servicios["app/servicios/page.tsx"]
     PainPoints["components/home/PainPoints.tsx"]
-    AccessoryCard["components/servicios/AccessoryCard.tsx"]
-    ExerciseSection["components/servicios/ExerciseSection.tsx"]
     
     Contacto["app/contacto/page.tsx"]
     ContactForm["components/contacto/ContactForm.tsx"]
@@ -336,12 +342,11 @@ graph TD
     Layout --> Home & Servicios & Contacto & Resenas
     
     Home --> HeroSection & ValueProp
-    Servicios --> PainPoints & AccessoryCard & ExerciseSection
+    Servicios --> PainPoints
     Contacto --> ContactForm
     Resenas --> ReviewCard
     
     HeroSection & ValueProp & PainPoints & ContactForm & ReviewCard --> UI
-    AccessoryCard & ExerciseSection --> UI
 
     style Layout fill:#1c3557,stroke:#333,color:#fff
     style Home fill:#d4a745,stroke:#333,color:#000
@@ -369,17 +374,7 @@ erDiagram
 **Database File:** `prisma/dev.db` (SQLite)  
 **ORM Client:** `lib/db.ts` (Prisma Client Singleton)
 
-### Colores de Marca
-
-```css
-/* Brand Colors */
---beige-bg: #f7f3ec;      /* Fondo principal */
---dark-blue: #1c3557;     /* Texto principal */
---soft-gold: #d4a745;     /* Acentos y detalles */
---gold-hover: #c19639;    /* Hover states */
-```
-
-## 📁 Estructura del Proyecto
+## 🛠️ Tecnologías
 
 ```
 Health.Control/
@@ -411,8 +406,8 @@ Health.Control/
 │   ├── contacto/
 │   │   └── ContactForm.tsx   # Formulario con Server Action
 │   ├── servicios/
-│   │   ├── AccessoryCard.tsx
-│   │   ├── ExerciseSection.tsx
+│   │   ├── AccessoryCard.tsx (legacy - no usado)
+│   │   ├── ExerciseSection.tsx (legacy - no usado)
 │   │   └── __tests__/        # Property-based tests
 │   ├── resenas/
 │   │   └── ReviewCard.tsx    # Tarjeta de reseña
@@ -430,9 +425,9 @@ Health.Control/
 │   │   ├── contact.ts        # Acción de envío de formulario
 │   │   └── __tests__/
 │   ├── data/                 # Datos estáticos
-│   │   ├── services.ts
-│   │   ├── exercises.ts
-│   │   ├── accessories.ts
+│   │   ├── services.ts (legacy - no usado)
+│   │   ├── exercises.ts (legacy - no usado)
+│   │   ├── accessories.ts (legacy - no usado)
 │   │   ├── reviews.ts        # Placeholder reviews
 │   │   └── google-reviews.ts # Fetch de Google Places API
 │   ├── validations/          # Schemas de Zod
@@ -464,6 +459,20 @@ Health.Control/
 - Las variables de entorno NO se commitean al repositorio
 - Los mensajes de error no exponen detalles técnicos al usuario
 - La validación de entrada se realiza tanto en cliente como en servidor
+
+## 🎨 Colores de Marca
+
+La aplicación utiliza una paleta de colores consistente en todo el diseño:
+
+```css
+/* Brand Colors */
+--beige-bg: #f7f3ec;      /* Fondo principal */
+--dark-blue: #1c3557;     /* Texto principal */
+--soft-gold: #d4a745;     /* Acentos y detalles */
+--gold-hover: #c19639;    /* Hover states */
+```
+
+Estos colores se definen en `app/globals.css` como variables CSS y se aplican de manera consistente en todos los componentes.
 
 ## 📄 Licencia
 

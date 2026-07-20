@@ -1,19 +1,15 @@
 import type { Metadata } from 'next'
-import { exercises } from '@/lib/data/exercises'
-import { accessories } from '@/lib/data/accessories'
 import PainPoints from '@/components/home/PainPoints'
-import ExerciseSection from '@/components/servicios/ExerciseSection'
-import AccessoryCard from '@/components/servicios/AccessoryCard'
 import type { PainPoint } from '@/lib/types'
 
 export const metadata: Metadata = {
-  title: 'Servicios y Ejercicios',
+  title: 'Servicios',
   description:
-    'Catálogo de tratamientos osteopresión, ejercicios adaptados y accesorios para casa.',
+    'Tratamientos de osteopresión personalizados para cada necesidad.',
   openGraph: {
-    title: 'Servicios y Ejercicios | Health-Control',
+    title: 'Servicios | Health-Control',
     description:
-      'Catálogo de tratamientos osteopresión, ejercicios adaptados y accesorios para casa.',
+      'Tratamientos de osteopresión personalizados para cada necesidad.',
     url: 'https://health-control.es/servicios',
   },
 }
@@ -56,33 +52,6 @@ export default function ServiciosPage() {
     <>
       {/* Pain Points - What we treat */}
       <PainPoints painPoints={painPoints} />
-
-      {/* Ejercicios */}
-      <section className="container mx-auto px-4 py-12">
-        <h2 className="mb-2 text-2xl font-bold tracking-tight text-[#1c3557] dark:text-[#f7f3ec]">
-          Ejercicios adaptados
-        </h2>
-        <p className="mb-8 text-[#1c3557]/70 dark:text-[#f7f3ec]/80">
-          Rutinas guiadas que puedes practicar desde casa entre sesiones.
-        </p>
-        <ExerciseSection exercises={exercises} />
-      </section>
-
-      {/* Accesorios */}
-      <section className="container mx-auto px-4 py-12">
-        <h2 className="mb-2 text-2xl font-bold tracking-tight text-[#1c3557] dark:text-[#f7f3ec]">
-          Accesorios recomendados
-        </h2>
-        <p className="mb-8 text-[#1c3557]/70 dark:text-[#f7f3ec]/80">
-          Productos seleccionados por nuestros especialistas para complementar
-          tu tratamiento en casa.
-        </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {accessories.map((accessory) => (
-            <AccessoryCard key={accessory.id} accessory={accessory} />
-          ))}
-        </div>
-      </section>
     </>
   )
 }
