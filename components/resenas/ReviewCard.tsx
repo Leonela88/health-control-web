@@ -27,7 +27,7 @@ export default function ReviewCard({ review }: { review: Review }) {
     .slice(0, 2)
 
   return (
-    <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+    <div className="rounded-xl border border-border bg-card shadow-sm p-6">
       <div className="mb-4 flex items-center gap-3">
         {review.avatarUrl ? (
           <Image

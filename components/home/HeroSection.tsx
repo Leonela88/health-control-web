@@ -21,8 +21,8 @@ export default function HeroSection() {
 
         <div className="max-w-3xl mx-auto mb-10">
           <p className="text-lg sm:text-xl text-[#1c3557]/80 dark:text-[#f7f3ec]/90 leading-relaxed mb-4">
-            Nuestro enfoque manual, basado en <span className="font-semibold text-[#1c3557] dark:text-[#d4a745]">técnicas alemanas</span>, 
-            combina la digitopresión y ejercicios de estiramientos por descompresión para aliviar tensiones musculares, 
+            Nuestro enfoque, basado en <span className="font-semibold text-[#1c3557] dark:text-[#d4a745]">métodos alemanes</span>, 
+            combina técnicas manuales y ejercicios de estiramientos por descompresión para aliviar tensiones musculares, 
             dolores articulares y desequilibrios posturales.
           </p>
           <p className="text-base sm:text-lg text-[#1c3557]/70 dark:text-[#f7f3ec]/80 leading-relaxed">

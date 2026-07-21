@@ -11,8 +11,7 @@ export async function getGoogleReviews() {
     )
 
     const data = await res.json()
-    console.log('Google response status:', data.status)
-console.log('Google response result:', JSON.stringify(data.result))
+
     const googleReviews: GooglePlaceReview[] = data.result?.reviews ?? []
 
     return googleReviews.map((review, index) => adaptGoogleReview(review, index))
