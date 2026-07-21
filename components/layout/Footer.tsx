@@ -14,8 +14,7 @@ export default function Footer() {
               <p className="text-2xl font-bold text-[#1c3557] dark:text-[#f7f3ec]">Health-Control</p>
             </div>
             <p className="text-base text-[#1c3557]/80 dark:text-[#f7f3ec]/90 max-w-md leading-relaxed">
-              Especialistas en osteopresión para aliviar dolores físicos y restaurar el equilibrio natural de tu cuerpo.
-            </p>
+              Take control of your health            </p>
             <div className="flex gap-3 pt-2">
               <Link
                 href="https://instagram.com/healthcontrol"

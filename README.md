@@ -7,11 +7,14 @@ Aplicación web para servicios de salud y bienestar especializados en osteopresi
 - [Descripción General](#descripción-general)
 - [Características](#características)
 - [Arquitectura](#arquitectura)
-- [Tecnologías](#tecnologías)
 - [Instalación](#instalación)
 - [Desarrollo](#desarrollo)
 - [Testing](#testing)
 - [Estructura del Proyecto](#estructura-del-proyecto)
+- [Seguridad](#seguridad)
+- [Colores de Marca](#colores-de-marca)
+- [Licencia](#licencia)
+- [Contacto](#contacto)
 
 ## 📖 Descripción General
 
@@ -79,8 +82,8 @@ Health-Control Web es una aplicación multi-página construida con Next.js 14+ (
 1. **Clonar el repositorio**
 
 ```bash
-git clone https://github.com/Leonela88/Health.Control.git
-cd Health.Control
+git clone https://github.com/Leonela88/health-control-web.git
+cd health-control-web
 ```
 
 2. **Instalar dependencias**
@@ -188,22 +191,11 @@ npm run test:coverage
 
 1. ✅ Landing muestra al menos 3 beneficios
 2. ✅ ServiceCard contiene campos obligatorios
-3. ✅ AccessoryCard contiene campos obligatorios
-4. ✅ Validación rechaza campos vacíos
-5. ✅ Validación de formato de email
-6. ✅ Persistencia round-trip de ContactMessage
-7. ✅ ReviewCard renderiza todos los campos requeridos
-8. ✅ Toggle de dark mode es idempotente y reversible
-
-### Colores de Marca
-
-```css
-/* Brand Colors */
---beige-bg: #f7f3ec;      /* Fondo principal */
---dark-blue: #1c3557;     /* Texto principal */
---soft-gold: #d4a745;     /* Acentos y detalles */
---gold-hover: #c19639;    /* Hover states */
-```
+3. ✅ Validación rechaza campos vacíos
+4. ✅ Validación de formato de email
+5. ✅ Persistencia round-trip de ContactMessage
+6. ✅ ReviewCard renderiza todos los campos requeridos
+7. ✅ Toggle de dark mode es idempotente y reversible
 
 ## 🛠️ Tecnologías
 
@@ -236,7 +228,7 @@ graph TB
     subgraph "Business Logic"
         ServerAction["lib/actions/contact.ts<br/>Server Action"]
         GoogleReviews["lib/data/google-reviews.ts<br/>getGoogleReviews()"]
-        StaticData["lib/data/<br/>services.ts, exercises.ts,<br/>accessories.ts, reviews.ts"]
+        StaticData["lib/data/<br/>services.ts, reviews.ts"]
         Validation["lib/validations/contact.ts<br/>Zod Schema"]
         Types["lib/types.ts<br/>TypeScript Interfaces"]
     end
@@ -310,7 +302,7 @@ Static Data Files → Page Components → UI Components → Browser
 ```
 
 **Detalles técnicos:**
-- Datos de servicios, ejercicios y accesorios en `lib/data/`
+- Datos de servicios en `lib/data/`
 - Renderizado en build time (SSG)
 - Sin llamadas a base de datos
 
@@ -374,10 +366,10 @@ erDiagram
 **Database File:** `prisma/dev.db` (SQLite)  
 **ORM Client:** `lib/db.ts` (Prisma Client Singleton)
 
-## 🛠️ Tecnologías
+## 📁 Estructura del Proyecto
 
 ```
-Health.Control/
+health-control-web/
 ├── .kiro/                    # Configuración de Kiro (specs, workflows)
 │   └── specs/
 │       └── health-control-web/
@@ -406,8 +398,6 @@ Health.Control/
 │   ├── contacto/
 │   │   └── ContactForm.tsx   # Formulario con Server Action
 │   ├── servicios/
-│   │   ├── AccessoryCard.tsx (legacy - no usado)
-│   │   ├── ExerciseSection.tsx (legacy - no usado)
 │   │   └── __tests__/        # Property-based tests
 │   ├── resenas/
 │   │   └── ReviewCard.tsx    # Tarjeta de reseña
@@ -426,8 +416,6 @@ Health.Control/
 │   │   └── __tests__/
 │   ├── data/                 # Datos estáticos
 │   │   ├── services.ts (legacy - no usado)
-│   │   ├── exercises.ts (legacy - no usado)
-│   │   ├── accessories.ts (legacy - no usado)
 │   │   ├── reviews.ts        # Placeholder reviews
 │   │   └── google-reviews.ts # Fetch de Google Places API
 │   ├── validations/          # Schemas de Zod

@@ -4,10 +4,6 @@ export async function GET() {
   const placeId = 'ChIJQRWYPofLpBIRI4o4kjbjJ_4'
   const apiKey = process.env.GOOGLE_PLACES_API_KEY
 
-  console.log('[Google Reviews API] Starting request...')
-  console.log('[Google Reviews API] API Key present:', !!apiKey)
-  console.log('[Google Reviews API] Place ID:', placeId)
-
   if (!apiKey) {
     console.error('[Google Reviews API] No API key configured')
     return NextResponse.json({ error: 'API key not configured', reviews: [] }, { status: 500 })
@@ -15,8 +11,6 @@ export async function GET() {
 
   try {
     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,rating,user_ratings_total&key=${apiKey}&language=es`
-    console.log('[Google Reviews API] Fetching from:', url.replace(apiKey, 'HIDDEN'))
-
     const res = await fetch(url, { 
       next: { revalidate: 86400 },
       cache: 'no-store' // Force fresh fetch for testing
