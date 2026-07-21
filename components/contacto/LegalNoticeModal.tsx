@@ -44,7 +44,7 @@ export default function LegalNoticeModal({ open, onOpenChange, onAccept }: Legal
       <DialogContent className="max-w-2xl max-h-[80vh] flex flex-col">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-[#1c3557] dark:text-[#f7f3ec]">
-            Aviso Legal
+            Aviso Legal y Política de Privacidad
           </DialogTitle>
         </DialogHeader>
 
@@ -53,84 +53,85 @@ export default function LegalNoticeModal({ open, onOpenChange, onAccept }: Legal
           onScroll={handleScroll}
           className="flex-1 overflow-y-auto pr-4 space-y-4 text-sm text-[#1c3557]/90 dark:text-[#f7f3ec]/90 leading-relaxed"
         >
+          {/* 1. Información General */}
           <section>
             <h3 className="font-semibold text-base mb-2 text-[#d4a745]">1. Información General</h3>
             <p>
-              Este sitio web es propiedad de <strong>Health Control-Pain Relief BCN</strong>, con domicilio social en Barcelona, España.
-              A través de este sitio web se facilita a los usuarios información sobre nuestros servicios de osteopresión y tratamientos de salud.
+              En cumplimiento de la LSSI-CE, se informa que este sitio web es gestionado por:
             </p>
-          </section>
-
-          <section>
-            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">2. Condiciones de Uso</h3>
-            <p>
-              El acceso y uso de este sitio web atribuye la condición de usuario y supone la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.
-            </p>
-            <p className="mt-2">
-              El usuario se compromete a hacer un uso adecuado de los contenidos y servicios que Health-Control ofrece a través de su sitio web y a no emplearlos para:
-            </p>
-            <ul className="list-disc pl-6 mt-2 space-y-1">
-              <li>Incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.</li>
-              <li>Difundir contenidos o propaganda de carácter racista, xenófobo, pornográfico-ilegal, de apología del terrorismo o atentatorio contra los derechos humanos.</li>
-              <li>Provocar daños en los sistemas físicos y lógicos de Health-Control, de sus proveedores o de terceras personas.</li>
+            <ul className="list-disc pl-6 mt-1 space-y-1">
+              <li><strong>Titular:</strong> Health Control - Pain Relief BCN</li>
+              <li><strong>Zona de actuación:</strong> Barcelona, Maresme y Vallès Oriental</li>
+              <li><strong>Email:</strong> contact@health-control.es</li>
             </ul>
           </section>
 
+          {/* 2. Información sobre los Servicios */}
           <section>
-            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">3. Propiedad Intelectual e Industrial</h3>
+            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">2. Información sobre los Servicios</h3>
             <p>
-              Todos los contenidos del sitio web, incluyendo pero no limitándose a textos, fotografías, gráficos, imágenes, iconos, tecnología, software, links y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad de Health-Control o de terceros, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación reconocidos por la normativa vigente en materia de propiedad intelectual sobre los mismos.
+              Los servicios se desarrollan exclusivamente en el ámbito del movimiento, la educación corporal, la liberación de tensión fascial y el bienestar integral, teniendo un carácter educativo y preventivo.
             </p>
-          </section>
-
-          <section>
-            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">4. Protección de Datos Personales</h3>
-            <p>
-              Health-Control se compromete al cumplimiento de la normativa vigente en materia de protección de datos personales, y garantiza el cumplimiento íntegro de las obligaciones dispuestas, así como la implementación de las medidas de seguridad dispuestas en el Reglamento General de Protección de Datos (RGPD) y en la Ley Orgánica de Protección de Datos (LOPD).
+            <p className="mt-2 font-medium">
+              Aviso sobre la naturaleza no sanitaria:
             </p>
-            <p className="mt-2">
-              Los datos personales recogidos a través del formulario de contacto serán tratados de forma confidencial y serán incorporados a la correspondiente actividad de tratamiento titularidad de Health-Control.
-            </p>
-          </section>
-
-          <section>
-            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">5. Exclusión de Responsabilidad</h3>
-            <p>
-              Health-Control no se hace responsable de los daños y perjuicios de cualquier naturaleza que pudieran derivarse de:
-            </p>
-            <ul className="list-disc pl-6 mt-2 space-y-1">
-              <li>La falta de disponibilidad, mantenimiento y efectivo funcionamiento del sitio web y/o de sus servicios y contenidos.</li>
-              <li>La existencia de virus, programas maliciosos o lesivos en los contenidos.</li>
-              <li>El uso ilícito, negligente, fraudulento o contrario al presente Aviso Legal.</li>
-              <li>La falta de licitud, calidad, fiabilidad, utilidad y disponibilidad de los servicios prestados por terceros y puestos a disposición de los usuarios en el sitio web.</li>
+            <ul className="list-disc pl-6 mt-1 space-y-1">
+              <li>No constituyen actos médicos, fisioterapéuticos ni sanitarios, ni sustituyen diagnósticos o tratamientos oficiales.</li>
+              <li>No se realizan diagnósticos ni se prescriben medicamentos.</li>
+              <li>Los resultados varían individualmente; no se garantiza la desaparición total del dolor.</li>
+              <li>Ante dolor agudo o patologías previas, debes consultar a un profesional sanitario.</li>
             </ul>
           </section>
 
+          {/* 3. Condiciones de Uso */}
           <section>
-            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">6. Información Médica</h3>
+            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">3. Condiciones de Uso</h3>
             <p>
-              La información contenida en este sitio web tiene carácter meramente informativo y en ningún caso sustituye el asesoramiento médico profesional. 
-              Los tratamientos de osteopresión deben ser realizados por profesionales cualificados. Ante cualquier duda, consulte con su médico.
+              El acceso a esta web le atribuye la condición de usuario, comprometiéndose a un uso adecuado de los contenidos y a abstenerse de realizar actividades ilícitas, lesionar derechos de terceros o intentar dañar los sistemas de la web.
             </p>
           </section>
 
+          {/* 4. Propiedad Intelectual e Industrial */}
+          <section>
+            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">4. Propiedad Intelectual e Industrial</h3>
+            <p>
+              Todos los contenidos (textos, gráficos, diseño y código) son propiedad de Health Control - Pain Relief BCN o de terceros autorizados. Queda prohibida su reproducción o distribución sin autorización previa.
+            </p>
+          </section>
+
+          {/* 5. Protección de Datos Personales */}
+          <section>
+            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">5. Protección de Datos Personales</h3>
+            <p>
+              En virtud del RGPD y LOPD-GDD, los datos facilitados mediante el formulario serán tratados exclusivamente por Health Control - Pain Relief BCN para atender tus consultas. No se cederán datos a terceros salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación o supresión enviando un correo a contact@health-control.es.
+            </p>
+          </section>
+
+          {/* 6. Exclusión de Responsabilidad */}
+          <section>
+            <h3 className="font-semibold text-base mb-2 text-[#d4a745]">6. Exclusión de Responsabilidad</h3>
+            <p>
+              Health Control no se responsabiliza de daños ocasionados por caídas del servidor, fallos técnicos, virus o contenidos maliciosos de terceros, ni del uso indebido que los usuarios hagan de la información publicada.
+            </p>
+          </section>
+
+          {/* 7. Modificaciones */}
           <section>
             <h3 className="font-semibold text-base mb-2 text-[#d4a745]">7. Modificaciones</h3>
             <p>
-              Health-Control se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su sitio web, 
-              pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados.
+              Nos reservamos el derecho de modificar el contenido de la web, de los servicios y del presente aviso legal en cualquier momento y sin previo aviso.
             </p>
           </section>
 
+          {/* 8. Legislación Aplicable y Jurisdicción */}
           <section>
             <h3 className="font-semibold text-base mb-2 text-[#d4a745]">8. Legislación Aplicable y Jurisdicción</h3>
             <p>
-              Las presentes condiciones se rigen por la legislación española. Para cualquier controversia derivada del acceso o uso de este sitio web, 
-              las partes se someten expresamente a los Juzgados y Tribunales de Barcelona, España.
+              Estas condiciones se rigen por la legislación española. Cualquier controversia será sometida a los Juzgados y Tribunales de la ciudad de Barcelona, España.
             </p>
           </section>
 
-          <section className="pb-4">
+          <section className="pb-2">
             <p className="text-xs text-[#1c3557]/70 dark:text-[#f7f3ec]/70 mt-4">
               Última actualización: {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
