@@ -1,3 +1,4 @@
-toml [build]
+[build]
 command = "npm run build"
-publish = ".next" [[plugins]] package = "@netlify/plugin-nextjs"
+publish = ".next" [[plugins]]
+package = "@netlify/plugin-nextjs"
