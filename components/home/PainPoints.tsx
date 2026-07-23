@@ -1,4 +1,3 @@
-import { AlertCircle } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import type { PainPoint } from '@/lib/types'
 
