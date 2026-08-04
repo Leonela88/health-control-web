@@ -1,22 +1,33 @@
-import { adaptGoogleReview, GooglePlaceReview } from '@/lib/types'
+import { adaptGooglePlaceReview, GooglePlaceReview, Review } from '@/lib/types'
 
-export async function getGoogleReviews() {
+// Fetch reviews from internal API route (which calls Google Places API)
+export async function getGoogleReviews(): Promise<Review[]> {
   try {
-    const apiKey = process.env.GOOGLE_PLACES_API_KEY
-    const placeId = 'ChIJQRWYPofLpBIRI4o4kjbjJ_4'
+    console.log('[Google Reviews] Fetching from internal API...')
 
-    const res = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,reviews&key=${apiKey}&language=es`,
-      { next: { revalidate: 86400 } }
-    )
+    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/google-reviews`, {
+      next: { revalidate: 86400 }, // Cache for 24 hours
+    })
 
-    const data = await res.json()
+    if (!response.ok) {
+      console.error('[Google Reviews] API route error:', response.status, response.statusText)
+      return []
+    }
 
-    const googleReviews: GooglePlaceReview[] = data.result?.reviews ?? []
+    const data = await response.json()
+    console.log('[Google Reviews] API response status:', data.status)
 
-    return googleReviews.map((review, index) => adaptGoogleReview(review, index))
+    if (data.status !== 'OK') {
+      console.error('[Google Reviews] API error:', data.error)
+      return []
+    }
+
+    const reviews: GooglePlaceReview[] = data.reviews || []
+    console.log('[Google Reviews] Retrieved reviews count:', reviews.length)
+
+    return reviews.map((review, index) => adaptGooglePlaceReview(review, index))
   } catch (error) {
-    console.error('Error fetching Google reviews:', error)
+    console.error('[Google Reviews] Unexpected error:', error)
     return []
   }
 }
