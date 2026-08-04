@@ -6,7 +6,10 @@ export async function GET() {
 
   console.log('[Google Reviews API] Starting request...')
   console.log('[Google Reviews API] API Key present:', !!apiKey)
+  console.log('[Google Reviews API] API Key value (first 10 chars):', apiKey?.substring(0, 10))
   console.log('[Google Reviews API] Place ID present:', !!placeId)
+  console.log('[Google Reviews API] Place ID value:', placeId)
+  console.log('[Google Reviews API] All env keys:', Object.keys(process.env).filter(k => k.includes('GOOGLE')))
 
   if (!apiKey) {
     console.error('[Google Reviews API] No API key configured')
