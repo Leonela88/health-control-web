@@ -1,33 +1,34 @@
-// Tipo compatible con Google Places Details API (futuro)
+// Google Places API Review
 export interface GooglePlaceReview {
   author_name: string
   rating: number
   text: string
   profile_photo_url?: string
   relative_time_description?: string
+  time: number
 }
 
-// Tipo interno de reseña (unifica placeholder + Google Places)
+// Tipo interno de reseña
 export interface Review {
   id: string
   authorName: string
   text: string
-  rating: number           // 1-5
+  rating: number // 1-5
   avatarUrl?: string
   source: 'google' | 'manual'
   date?: string
 }
 
-// Adaptador Google → Review interno
-export function adaptGoogleReview(gr: GooglePlaceReview, index: number): Review {
+// Adaptador Google Places → Review interno
+export function adaptGooglePlaceReview(gpr: GooglePlaceReview, index: number): Review {
   return {
     id: `google-${index}`,
-    authorName: gr.author_name,
-    text: gr.text,
-    rating: gr.rating,
-    avatarUrl: gr.profile_photo_url,
+    authorName: gpr.author_name,
+    text: gpr.text,
+    rating: gpr.rating,
+    avatarUrl: gpr.profile_photo_url,
     source: 'google',
-    date: gr.relative_time_description,
+    date: gpr.relative_time_description,
   }
 }
 
