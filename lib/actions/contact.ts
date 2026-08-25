@@ -28,7 +28,11 @@ export async function contactAction(
     await prisma.contactMessage.create({ data: parsed.data })
     revalidatePath('/contacto')
     return { success: true, message: '¡Mensaje enviado! Te contactaremos pronto.' }
-  } catch {
-    return { success: false, message: 'Error al enviar el mensaje. Inténtalo de nuevo.' }
+  } catch (error) {
+    console.error('[Contact Action] Database error:', error)
+    return {
+      success: false,
+      message: 'Error al enviar el mensaje. Inténtalo de nuevo más tarde.',
+    }
   }
 }
